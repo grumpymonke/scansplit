@@ -1,19 +1,17 @@
-import { useState } from 'react';
+import React from 'react'; // Import React
+import ButtonGradient from "./assets/svg/ButtonGradient"; // Assuming correct path to ButtonGradient
+import './App.css'; // Assuming App.css exists for styling
+import Header from './components/Header'; // Importing Header component
 
-import ButtonGradient from "./assets/svg/ButtonGradient";
-import './App.css';
-import Button from './components/Button';
-import Header from './components/Header';
-
-const App =() =>{
-    return(
-        <>
-        <h1 className="text-3xl font-bold underline"> Hello world! </h1>
-    
-    <div className='pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden'>
-        <Header /> </div>
-    <ButtonGradient />
+const App = () => {
+  return (
+    <>
+      <div className='pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden'>
+        <Header />
+      </div>
+      <ButtonGradient /> {/* Assuming ButtonGradient is a component or element */}
     </>
-    );
+  );
 };
+
 export default App;
