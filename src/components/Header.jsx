@@ -1,4 +1,6 @@
 import {Logo} from '../assets';
+import { navigation } from "../constants";
+import Button from './Button';
 
 const Header  = () => {
 
@@ -9,7 +11,26 @@ const Header  = () => {
           <a className="block w-[12rem] xl:mr-8" href="#hero">
           <img src={Logo} width={190} height={40} alt="Logo" />
           </a>
-        </div>
+<nav className='hidden fixed top-[5rem] left-0 right-0 bottom-0 bg-neutral-800 lg:static lg:flex lg:mx-auto lg:bg-transparent'>
+    <div className=' className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row"'>
+    
+    {navigation.map((item) => (
+              <a
+
+    key={item.id}
+    href={item.url}
+      className={`block relative font-code text-2xl uppercase text-neutral-100 transition-colors hover: text-purple-500 ${
+                  item.onlyMobile ? "lg:hidden" : ""
+                } px-6 py-6 md:py-8 lg:-mr-0.25 
+                lg:text-xs lg:font-semibold`}
+    >
+       {item.title}
+    </a>
+    ))}
+      </div>
+    </nav> 
+ </div>
+
     );     
 };          
 
