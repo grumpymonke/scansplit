@@ -1,18 +1,24 @@
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
+import Logo from './assets/Logo.png'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Button from "./components/Button";
+import Header from "./components/Header";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
+const App =() =>{
+  return(
     <>
-    <h1 className="text-3xl">Hello world </h1>
-    <ButtonGradient />
+   <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+
+     </div>
+      <ButtonGradient />
+    
+    
+    
     </>
-)
+  )
 }
+
 
 export default App

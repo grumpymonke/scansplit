@@ -1,7 +1,7 @@
-import brainwave from "./brainwave.svg";
-import check from "./check.svg";
-import brainwaveSymbol from "./brainwave-symbol.svg";
-import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
+import Logo from './Logo.png';
+import Logo1 from './Logo.svg';
+import scansplit from './scansplit.png';  
+import scansplit1 from './scansplit.svg';
 import play from "./play.svg";
 import gradient from "./gradient.png";
 import smallSphere from "./4-small.png";
@@ -76,12 +76,12 @@ import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
 export {
-  brainwave,
+ Logo,
   check,
   check2,
   loading1,
-  brainwaveSymbol,
-  brainwaveWhiteSymbol,
+  scansplit,
+  scansplitting,
   play,
   gradient,
   smallSphere,
