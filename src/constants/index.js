@@ -36,6 +36,11 @@ import {
     yourlogo,
   } from "../assets";
   
+  
+
+export const background = "#3b82f6"; 
+
+
   export const navigation = [
     {
       id: "0",
