@@ -3,6 +3,6 @@
 @tailwind utilities;
 .clip-path-custom {
     clip-path: polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%);
-    background: rgba(0, 0, 0, 0.8); /* Adjust the background here */
+    background: rgba(0, 0, 0, 0.8); 
   }
   
