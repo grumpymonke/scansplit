@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className='fixed top-0 z-50 w-full bg-neutral-800 backdrop-blur-sm border-b border-neutral-600'>
+    <div className='fixed top-0 z-50 w-full bg-black backdrop-blur-sm border-b border-white'>
       <div className='flex items-center justify-between px-5 lg:px-10 py-4'>
         <a href="#hero" className="flex items-center space-x-2">
           <img src={scansplit} width={40} height={40} alt="Logo" />
@@ -29,8 +29,8 @@ const Header = () => {
               <li key={item.id}>
                 <a 
                   href={item.url}
-                  className="cursor-pointer text-white hover:text-blue-500 text-lg lg:text-sm uppercase tracking-wide transition-colors"
-                  onClick={() => setOpenNavigation(false)} // Close the menu on click
+                  className="cursor-pointer text-white hover:text-purple-500 text-lg lg:text-sm uppercase tracking-wide transition-colors"
+                  onClick={() => setOpenNavigation(false)} 
                 >
                   {item.title}
                 </a>
@@ -39,7 +39,7 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* Hamburger menu button */}
+        
         <div className="lg:hidden">
           <button
             onClick={handleClick}
@@ -58,7 +58,7 @@ const Header = () => {
               <a 
                 href={item.url}
                 className="text-white text-lg uppercase tracking-wide cursor-pointer transition-all hover:text-blue-500"
-                onClick={() => setOpenNavigation(false)} // Close the menu on click
+                onClick={() => setOpenNavigation(false)} 
               >
                 {item.title}
               </a>
