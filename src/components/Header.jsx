@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll'; // for smooth scrolling
-import { motion } from 'framer-motion'; 
 import scansplit from '../assets/scansplit.png';
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
 
   const navigation = [
-    { id: 1, title: 'Home', url: 'home' },
-    { id: 2, title: 'About', url: 'about' },
-    { id: 3, title: 'Services', url: 'services' },
-    { id: 4, title: 'Contact', url: 'contact' },
+    { id: 1, title: 'A', url: '#home' },
+    { id: 2, title: 'B', url: '#about' },
+    { id: 3, title: 'C', url: '#services' },
+    { id: 4, title: 'D', url: '#contact' },
   ];
 
   const handleClick = () => {
@@ -23,20 +21,19 @@ const Header = () => {
         <a href="#hero" className="flex items-center space-x-2">
           <img src={scansplit} width={40} height={40} alt="Logo" />
           <h1 className='font-mono text-2xl text-white'>ScanSplit</h1>
-        </a>  
+        </a>
 
         <nav className={`lg:flex ${openNavigation ? "block" : "hidden"} lg:static`}>
           <ul className="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-6">
             {navigation.map((item) => (
               <li key={item.id}>
-                <Link 
-                  to={item.url}
-                  smooth={true}
-                  duration={500}
-                  className="cursor-pointer text-white hover:text-gray-300 text-lg lg:text-sm uppercase tracking-wide transition-all hover:scale-105"
+                <a 
+                  href={item.url}
+                  className="cursor-pointer text-white hover:text-blue-500 text-lg lg:text-sm uppercase tracking-wide transition-colors"
+                  onClick={() => setOpenNavigation(false)} // Close the menu on click
                 >
                   {item.title}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -44,40 +41,31 @@ const Header = () => {
 
         {/* Hamburger menu button */}
         <div className="lg:hidden">
-          <motion.button
+          <button
             onClick={handleClick}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
             className="text-white focus:outline-none"
           >
             {openNavigation ? 'Close' : 'Menu'}
-          </motion.button>
+          </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: openNavigation ? "100vh" : 0 }}
-        transition={{ duration: 0.5 }}
-        className={`lg:hidden bg-neutral-800 overflow-hidden`}
-      >
+      <div className={`lg:hidden bg-neutral-800 ${openNavigation ? 'block' : 'hidden'}`}>
         <ul className="flex flex-col items-center space-y-4 py-6">
           {navigation.map((item) => (
             <li key={item.id}>
-              <Link 
-                to={item.url}
-                smooth={true}
-                duration={500}
-                className="text-white text-lg uppercase tracking-wide cursor-pointer transition-all hover:scale-105"
-                onClick={handleClick}
+              <a 
+                href={item.url}
+                className="text-white text-lg uppercase tracking-wide cursor-pointer transition-all hover:text-blue-500"
+                onClick={() => setOpenNavigation(false)} // Close the menu on click
               >
                 {item.title}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
-      </motion.div>
+      </div>
     </div>
   );
 };
