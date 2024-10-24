@@ -1,27 +1,16 @@
+import React from 'react';
 
-import ButtonSvg from "../assets/svg/ButtonSvg";
-
-const Button = ({ className, href, onClick, children, px, white }) => {
-  const classes = `button relative inline-flex items-center justify-center h-11 transition-colors hover:text-color-1 ${
-    px || "px-7"
-  } ${white ? "text-n-8" : "text-n-1"} ${className || ""}`;
-  const spanClasses = "relative z-10";
-
-  const renderButton = () => (
-    <button className={classes} onClick={onClick}>
-      <span className={spanClasses}>{children}</span>
-      {ButtonSvg(white)}
-    </button>
-  );
-
-  const renderLink = () => (
-    <a href={href} className={classes}>
-      <span className={spanClasses}>{children}</span>
-      {ButtonSvg(white)}
+const Button = ({ href, children }) => {
+  return (
+    <a
+      href={href}
+      className="relative inline-block px-6 py-2 font-mono text-white rounded-lg hover:bg-purple-700 transition-all"
+    >
+      <span className="absolute inset-0 w-full h-full rounded-lg bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500"></span>
+      <span className="absolute inset-0 w-full h-full bg-black rounded-lg clip-path-custom"></span>
+      <span className="relative z-10">{children}</span>
     </a>
   );
-
-  return href ? renderLink() : renderButton();
 };
 
 export default Button;
