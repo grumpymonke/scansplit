@@ -1,7 +1,7 @@
-import React from 'react'; // Import React
-import ButtonGradient from "./assets/svg/ButtonGradient"; // Assuming correct path to ButtonGradient
-import './App.css'; // Assuming App.css exists for styling
-import Header from './components/Header'; // Importing Header component
+import React from 'react'; 
+import ButtonGradient from "./assets/svg/ButtonGradient"; 
+import './App.css'; 
+import Header from './components/Header'; 
 
 const App = () => {
   return (
